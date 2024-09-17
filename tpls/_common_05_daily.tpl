@@ -15,5 +15,11 @@
   \vskip\dimexpr5.4mm
   \myUnderline{Notes $\vert$ {{ $today.LinkLeaf "More" "More" }}\hfill{}{{ $today.LinkLeaf "Reflect" "Reflect" }}\hfill{}\hyperlink{Notes Index}{All notes}}
   \myMash[\myDailySpring]{\myNumDailyNotes}{\myNumDotWidthTwoThirds}
+  {{- if .Body.Events -}}
+  \myUnderline{Events\myDummyQ}
+  {{- range .Body.Events -}}
+  \myEventLine{{ . }}
+  {{- end -}}
+  {{- end -}}
 \end{minipage}
 \par\pagebreak
